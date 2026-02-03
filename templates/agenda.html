@@ -11,4 +11,18 @@
     </form>
     <p>{{ tarefa.titulo_tarefa }} - {{ tarefa.data_conclusao }}</p>
 
+
+
+<div class="lista-tarefas">
+    {% for tarefa in tarefas %}
+        <div class="tarefa">
+            <span class="info">
+                {{ tarefa.titulo_tarefa }} - {{ tarefa.data_conclusao }}
+            </span>
+        </div>
+    {% endfor %}
+</div>
+
+
+
 {% endblock %}
