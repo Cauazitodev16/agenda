@@ -1,12 +1,12 @@
 p {
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 26px;
     letter-spacing: 1px;
 }
 
 body {
-    background: linear-gradient(135deg, rgb(7, 164, 75), rgb(129, 190, 144));
+    background: linear-gradient(135deg, rgb(82, 0, 0), rgb(37, 0, 169));
     font-family: Arial, Helvetica, sans-serif;
 
     display: flex;
@@ -16,7 +16,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 50px;
     font-size: 46px;
     letter-spacing: 1px;
@@ -29,7 +29,7 @@ h1 {
     letter-spacing: 1px;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
 
-    background-color: #ffffff; 
+    background: linear-gradient(135deg, rgb(82, 0, 0), rgb(37, 0, 169));; 
     display: inline-block;      
     padding: 10px 40px;         
     border-radius: 10px;       
@@ -65,13 +65,13 @@ h1 {
 .tarefa.info {
     flex: 1;
     font-size: 20px;
-    color: #ffffff;
+    color: #000000;
     word-break: break-word;
 }
 
 .tarefa.feita.info {
     text-decoration: line-through;
-    color: #8b949e;
+    color: #000000;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
 
 }
@@ -117,15 +117,15 @@ h1 {
 
 a {
     text-align: center;
-    color:rgb(255, 255, 255);
+    color:rgb(10, 152, 0);
     font-size: 26px;
     letter-spacing: 1px;
 
 }
 
 .formulario button {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
-    color: #ffffff;
+    background: linear-gradient(135deg, #e9d11c, #97a316);
+    color: #183dc4;
     border: none;
     padding: 12px 28px;
     font-size: 18px;
