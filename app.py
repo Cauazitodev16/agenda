@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from models.tarefa import Tarefa
+from models.database import init_db
 
 app = Flask(__name__)
+
+init_db()
 
 @app.route('/')
 def home():
@@ -36,9 +39,9 @@ def update(idTarefa):
         return redirect(url_for('agenda'))
 
     tarefas = Tarefa.obter_tarefas()
-    tarefa_selecionada = Tarefa.id (idTarefa)
-    return render_template('agenda.html', titulo =f'Editando a tarefa ID: {idTarefa}', 
-    tarefas=tarefas, tarefa_selecionada=tarefa_selecionada)
+    tarefa_selecionada = Tarefa.id(idTarefa) # seleção da tarefa que será editada
+
+    return render_template('agenda.html', titulo=f'Editando a tarefa ID: {idTarefa}', tarefas=tarefas, tarefa_selecionada=tarefa_selecionada)
     
     
     
