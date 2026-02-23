@@ -1,6 +1,6 @@
 # Agenda em Python usando Flask
 
-Este Projeto foi elaborado por Cauãzito, para permitir o aprendizado de conecitos como o padrão de projeto MVC (Model-View-Controller), framework Flask e seus componentes, variáveis de ambiente, paradigma de programação orientado a objetos e reforço de fundamentos da linguagem de programção Python.
+Este Projeto foi elaborado por Cauãzito, para permitir o aprendizado de conceitos como o padrão de projeto MVC (Model-View-Controller), framework Flask e seus componentes, variáveis de ambiente, paradigma de programação orientado a objetos e reforço de fundamentos da linguagem de programação Python.
 
 Para implementar este projeto localmente, siga os seguintes passos:
 

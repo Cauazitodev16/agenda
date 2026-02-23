@@ -12,16 +12,22 @@ def home():
 
 @app.route('/agenda', methods=['GET', 'POST'])
 def agenda():
-    tarefas = None
-    
+
     if request.method == 'POST':
-        titulo_tarefa = request.form['titulo-tarefa']
-        data_conclusao = request.form['data-conclusao']
-        tarefa = Tarefa(titulo_tarefa, data_conclusao)
+        titulo = request.form['titulo-tarefa']
+        data_prevista = request.form['data-conclusao']
+
+        if data_prevista == "":
+            data_prevista = None
+
+        tarefa = Tarefa(titulo, data_prevista)
         tarefa.salvar_tarefa()
 
-    tarefas = Tarefa.obter_tarefas()  
+        return redirect(url_for('agenda'))
+
+    tarefas = Tarefa.obter_tarefas()
     return render_template('agenda.html', titulo='Agenda', tarefas=tarefas)
+
 
 @app.route('/delete/<int:idTarefa>')
 def delete(idTarefa):
@@ -29,22 +35,39 @@ def delete(idTarefa):
     tarefa.excluir_tarefa()
     return redirect(url_for('agenda'))
 
+
+@app.route("/concluir/<int:idTarefa>")
+def concluir(idTarefa):
+    tarefa = Tarefa.id(idTarefa)
+    tarefa.concluir_tarefa()
+    return redirect(url_for("agenda"))
+
+
 @app.route('/update/<int:idTarefa>', methods=['GET', 'POST'])
 def update(idTarefa):
+
     if request.method == 'POST':
         titulo = request.form['titulo-tarefa']
-        data = request.form['data-conclusao']
-        tarefa = Tarefa(titulo, data, idTarefa)
+        data_prevista = request.form['data-conclusao']
+
+        if data_prevista == "":
+            data_prevista = None
+
+        tarefa = Tarefa(titulo, data_prevista, None, idTarefa)
         tarefa.atualizar_tarefa()
+
         return redirect(url_for('agenda'))
 
     tarefas = Tarefa.obter_tarefas()
-    tarefa_selecionada = Tarefa.id(idTarefa) # seleção da tarefa que será editada
+    tarefa_selecionada = Tarefa.id(idTarefa)
 
-    return render_template('agenda.html', titulo=f'Editando a tarefa ID: {idTarefa}', tarefas=tarefas, tarefa_selecionada=tarefa_selecionada)
-    
-    
-    
+    return render_template(
+        'agenda.html',
+        titulo=f'Editando tarefa {idTarefa}',
+        tarefas=tarefas,
+        tarefa_selecionada=tarefa_selecionada
+    )
+
 
 @app.route('/ola')
 def ola_mundo():

@@ -6,12 +6,18 @@ p {
 }
 
 body {
-    background: linear-gradient(135deg, rgb(0, 0, 0), rgb(193, 116, 0));
+    background: linear-gradient(135deg, rgb(134, 1, 1), rgb(97, 97, 97));
     font-family: Arial, Helvetica, sans-serif;
 
     display: flex;
     flex-direction: column;
     align-items: center;  
+}
+
+.tarefa.feita.info {
+    text-decoration: line-through;
+    color: #000000;
+    font-family: "Brush Script MT", "Brush Script Std", cursive;
 }
 
 h1 {
@@ -29,7 +35,7 @@ h1 {
     letter-spacing: 1px;
     font-family: "Brush Script MT", "Brush Script Std", cursive;
 
-    background: linear-gradient(135deg, rgb(0, 0, 0), rgb(171, 91, 0));; 
+    background: linear-gradient(135deg, rgb(173, 14, 14), rgb(121, 121, 121));; 
     display: inline-block;      
     padding: 10px 40px;         
     border-radius: 10px;       
@@ -69,12 +75,11 @@ h1 {
     word-break: break-word;
 }
 
-.tarefa.feita.info {
+.concluida {
     text-decoration: line-through;
-    color: #000000;
-    font-family: "Brush Script MT", "Brush Script Std", cursive;
-
+    color: gray;
 }
+   
 
 .lista-tarefas {
     display: flex;
