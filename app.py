@@ -6,9 +6,6 @@ app = Flask(__name__)
 
 init_db()
 
-@app.route('/')
-def home():
-    return render_template('home.html', titulo='Home')
 
 @app.route('/agenda', methods=['GET', 'POST'])
 def agenda():
